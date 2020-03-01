@@ -32,3 +32,7 @@ Route::post('password/reset','Auth\ResetPasswordController@reset')->name('passwo
 Route::get('email/verify','Auth\VerificationController@show')->name('verification.notice');
 Route::get('email/verify/{id}/{hash}','Auth\VerificationController@verify')->name('verification.verify');
 Route::post('email/resend','Auth\VerificationController@resend')->name('verification.resend');
+
+// 个人中心
+Route::resource('users','UsersController',['only' => ['show', 'update', 'edit']]);
+
