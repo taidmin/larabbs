@@ -25,7 +25,7 @@ class UsersController extends Controller
 
         // 上传文件
         if($request->avatar){
-            $request = $uploader->save($request->avatar, 'avatars', $user->id);
+            $request = $uploader->save($request->avatar, 'avatars', $user->id, 416);
             if($request){
                 $data['avatar'] = $request['path'];
             }
