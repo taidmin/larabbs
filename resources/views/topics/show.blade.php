@@ -66,6 +66,7 @@
       <div class="card topic-reply mt-4">
         <div class="card-body">
           @includeWhen(Auth::check(),'topics._reply_box', ['topic' => $topic])
+          <br>
           @include('topics._reply_list',['replies' => $topic->replies()->with('user')->get()])
         </div>
       </div>
