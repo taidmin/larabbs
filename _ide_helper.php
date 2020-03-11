@@ -3,7 +3,7 @@
 
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 6.16.0 on 2020-02-29 16:22:09.
+ * Generated for Laravel 6.16.0 on 2020-03-11 23:21:53.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
@@ -1836,7 +1836,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Get the currently authenticated user.
          *
-         * @return \App\Models\User|null
+         * @return \App\Models\User|null 
          * @static 
          */ 
         public static function user()
@@ -1874,7 +1874,7 @@ namespace Illuminate\Support\Facades {
          * Log the given user ID into the application without sessions or cookies.
          *
          * @param mixed $id
-         * @return \App\Models\User|false
+         * @return \App\Models\User|false 
          * @static 
          */ 
         public static function onceUsingId($id)
@@ -1943,7 +1943,7 @@ namespace Illuminate\Support\Facades {
          *
          * @param mixed $id
          * @param bool $remember
-         * @return \App\Models\User|false
+         * @return \App\Models\User|false 
          * @static 
          */ 
         public static function loginUsingId($id, $remember = false)
@@ -2022,7 +2022,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Get the last user we attempted to authenticate.
          *
-         * @return \App\Models\User
+         * @return \App\Models\User 
          * @static 
          */ 
         public static function getLastAttempted()
@@ -2133,7 +2133,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Return the currently cached user.
          *
-         * @return \App\Models\User|null
+         * @return \App\Models\User|null 
          * @static 
          */ 
         public static function getUser()
@@ -2183,7 +2183,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Determine if current user is authenticated. If not, throw an exception.
          *
-         * @return \App\Models\User
+         * @return \App\Models\User 
          * @throws \Illuminate\Auth\AuthenticationException
          * @static 
          */ 
@@ -8471,6 +8471,104 @@ namespace Illuminate\Support\Facades {
         public static function hasMacro($name)
         {
                         return \Illuminate\Routing\Redirector::hasMacro($name);
+        }
+         
+    }
+
+    /**
+     * 
+     *
+     */ 
+    class Redis {
+        
+        /**
+         * Get a Redis connection by name.
+         *
+         * @param string|null $name
+         * @return \Illuminate\Redis\Connections\Connection 
+         * @static 
+         */ 
+        public static function connection($name = null)
+        {
+                        /** @var \Illuminate\Redis\RedisManager $instance */
+                        return $instance->connection($name);
+        }
+        
+        /**
+         * Resolve the given connection by name.
+         *
+         * @param string|null $name
+         * @return \Illuminate\Redis\Connections\Connection 
+         * @throws \InvalidArgumentException
+         * @static 
+         */ 
+        public static function resolve($name = null)
+        {
+                        /** @var \Illuminate\Redis\RedisManager $instance */
+                        return $instance->resolve($name);
+        }
+        
+        /**
+         * Return all of the created connections.
+         *
+         * @return array 
+         * @static 
+         */ 
+        public static function connections()
+        {
+                        /** @var \Illuminate\Redis\RedisManager $instance */
+                        return $instance->connections();
+        }
+        
+        /**
+         * Enable the firing of Redis command events.
+         *
+         * @return void 
+         * @static 
+         */ 
+        public static function enableEvents()
+        {
+                        /** @var \Illuminate\Redis\RedisManager $instance */
+                        $instance->enableEvents();
+        }
+        
+        /**
+         * Disable the firing of Redis command events.
+         *
+         * @return void 
+         * @static 
+         */ 
+        public static function disableEvents()
+        {
+                        /** @var \Illuminate\Redis\RedisManager $instance */
+                        $instance->disableEvents();
+        }
+        
+        /**
+         * Set the default driver.
+         *
+         * @param string $driver
+         * @return void 
+         * @static 
+         */ 
+        public static function setDriver($driver)
+        {
+                        /** @var \Illuminate\Redis\RedisManager $instance */
+                        $instance->setDriver($driver);
+        }
+        
+        /**
+         * Register a custom driver creator Closure.
+         *
+         * @param string $driver
+         * @param \Closure $callback
+         * @return \Illuminate\Redis\RedisManager 
+         * @static 
+         */ 
+        public static function extend($driver, $callback)
+        {
+                        /** @var \Illuminate\Redis\RedisManager $instance */
+                        return $instance->extend($driver, $callback);
         }
          
     }
@@ -14973,6 +15071,612 @@ namespace Illuminate\Support {
  
 }
 
+namespace Barryvdh\Debugbar { 
+
+    /**
+     * 
+     *
+     * @method static void alert(string $message)
+     * @method static void critical(string $message)
+     * @method static void debug(string $message)
+     * @method static void emergency(string $message)
+     * @method static void error(string $message)
+     * @method static void info(string $message)
+     * @method static void log(string $message)
+     * @method static void notice(string $message)
+     * @method static void warning(string $message)
+     * @see \Barryvdh\Debugbar\LaravelDebugbar
+     */ 
+    class Facade {
+        
+        /**
+         * Enable the Debugbar and boot, if not already booted.
+         *
+         * @static 
+         */ 
+        public static function enable()
+        {
+                        /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+                        return $instance->enable();
+        }
+        
+        /**
+         * Boot the debugbar (add collectors, renderer and listener)
+         *
+         * @static 
+         */ 
+        public static function boot()
+        {
+                        /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+                        return $instance->boot();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function shouldCollect($name, $default = false)
+        {
+                        /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+                        return $instance->shouldCollect($name, $default);
+        }
+        
+        /**
+         * Adds a data collector
+         *
+         * @param \Barryvdh\Debugbar\DataCollectorInterface $collector
+         * @throws DebugBarException
+         * @return \Barryvdh\Debugbar\LaravelDebugbar 
+         * @static 
+         */ 
+        public static function addCollector($collector)
+        {
+                        /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+                        return $instance->addCollector($collector);
+        }
+        
+        /**
+         * Handle silenced errors
+         *
+         * @param $level
+         * @param $message
+         * @param string $file
+         * @param int $line
+         * @param array $context
+         * @throws \ErrorException
+         * @static 
+         */ 
+        public static function handleError($level, $message, $file = '', $line = 0, $context = [])
+        {
+                        /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+                        return $instance->handleError($level, $message, $file, $line, $context);
+        }
+        
+        /**
+         * Starts a measure
+         *
+         * @param string $name Internal name, used to stop the measure
+         * @param string $label Public name
+         * @static 
+         */ 
+        public static function startMeasure($name, $label = null)
+        {
+                        /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+                        return $instance->startMeasure($name, $label);
+        }
+        
+        /**
+         * Stops a measure
+         *
+         * @param string $name
+         * @static 
+         */ 
+        public static function stopMeasure($name)
+        {
+                        /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+                        return $instance->stopMeasure($name);
+        }
+        
+        /**
+         * Adds an exception to be profiled in the debug bar
+         *
+         * @param \Exception $e
+         * @deprecated in favor of addThrowable
+         * @static 
+         */ 
+        public static function addException($e)
+        {
+                        /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+                        return $instance->addException($e);
+        }
+        
+        /**
+         * Adds an exception to be profiled in the debug bar
+         *
+         * @param \Exception $e
+         * @static 
+         */ 
+        public static function addThrowable($e)
+        {
+                        /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+                        return $instance->addThrowable($e);
+        }
+        
+        /**
+         * Returns a JavascriptRenderer for this instance
+         *
+         * @param string $baseUrl
+         * @param string $basePathng
+         * @return \Barryvdh\Debugbar\JavascriptRenderer 
+         * @static 
+         */ 
+        public static function getJavascriptRenderer($baseUrl = null, $basePath = null)
+        {
+                        /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+                        return $instance->getJavascriptRenderer($baseUrl, $basePath);
+        }
+        
+        /**
+         * Modify the response and inject the debugbar (or data in headers)
+         *
+         * @param \Symfony\Component\HttpFoundation\Request $request
+         * @param \Symfony\Component\HttpFoundation\Response $response
+         * @return \Symfony\Component\HttpFoundation\Response 
+         * @static 
+         */ 
+        public static function modifyResponse($request, $response)
+        {
+                        /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+                        return $instance->modifyResponse($request, $response);
+        }
+        
+        /**
+         * Check if the Debugbar is enabled
+         *
+         * @return boolean 
+         * @static 
+         */ 
+        public static function isEnabled()
+        {
+                        /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+                        return $instance->isEnabled();
+        }
+        
+        /**
+         * Collects the data from the collectors
+         *
+         * @return array 
+         * @static 
+         */ 
+        public static function collect()
+        {
+                        /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+                        return $instance->collect();
+        }
+        
+        /**
+         * Injects the web debug toolbar into the given Response.
+         *
+         * @param \Symfony\Component\HttpFoundation\Response $response A Response instance
+         * Based on https://github.com/symfony/WebProfilerBundle/blob/master/EventListener/WebDebugToolbarListener.php
+         * @static 
+         */ 
+        public static function injectDebugbar($response)
+        {
+                        /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+                        return $instance->injectDebugbar($response);
+        }
+        
+        /**
+         * Disable the Debugbar
+         *
+         * @static 
+         */ 
+        public static function disable()
+        {
+                        /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+                        return $instance->disable();
+        }
+        
+        /**
+         * Adds a measure
+         *
+         * @param string $label
+         * @param float $start
+         * @param float $end
+         * @static 
+         */ 
+        public static function addMeasure($label, $start, $end)
+        {
+                        /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+                        return $instance->addMeasure($label, $start, $end);
+        }
+        
+        /**
+         * Utility function to measure the execution of a Closure
+         *
+         * @param string $label
+         * @param \Closure $closure
+         * @static 
+         */ 
+        public static function measure($label, $closure)
+        {
+                        /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+                        return $instance->measure($label, $closure);
+        }
+        
+        /**
+         * Collect data in a CLI request
+         *
+         * @return array 
+         * @static 
+         */ 
+        public static function collectConsole()
+        {
+                        /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+                        return $instance->collectConsole();
+        }
+        
+        /**
+         * Adds a message to the MessagesCollector
+         * 
+         * A message can be anything from an object to a string
+         *
+         * @param mixed $message
+         * @param string $label
+         * @static 
+         */ 
+        public static function addMessage($message, $label = 'info')
+        {
+                        /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+                        return $instance->addMessage($message, $label);
+        }
+        
+        /**
+         * Checks if a data collector has been added
+         *
+         * @param string $name
+         * @return boolean 
+         * @static 
+         */ 
+        public static function hasCollector($name)
+        {
+            //Method inherited from \DebugBar\DebugBar            
+                        /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+                        return $instance->hasCollector($name);
+        }
+        
+        /**
+         * Returns a data collector
+         *
+         * @param string $name
+         * @return \DebugBar\DataCollectorInterface 
+         * @throws DebugBarException
+         * @static 
+         */ 
+        public static function getCollector($name)
+        {
+            //Method inherited from \DebugBar\DebugBar            
+                        /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+                        return $instance->getCollector($name);
+        }
+        
+        /**
+         * Returns an array of all data collectors
+         *
+         * @return \DebugBar\array[DataCollectorInterface] 
+         * @static 
+         */ 
+        public static function getCollectors()
+        {
+            //Method inherited from \DebugBar\DebugBar            
+                        /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+                        return $instance->getCollectors();
+        }
+        
+        /**
+         * Sets the request id generator
+         *
+         * @param \DebugBar\RequestIdGeneratorInterface $generator
+         * @return \Barryvdh\Debugbar\LaravelDebugbar 
+         * @static 
+         */ 
+        public static function setRequestIdGenerator($generator)
+        {
+            //Method inherited from \DebugBar\DebugBar            
+                        /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+                        return $instance->setRequestIdGenerator($generator);
+        }
+        
+        /**
+         * 
+         *
+         * @return \DebugBar\RequestIdGeneratorInterface 
+         * @static 
+         */ 
+        public static function getRequestIdGenerator()
+        {
+            //Method inherited from \DebugBar\DebugBar            
+                        /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+                        return $instance->getRequestIdGenerator();
+        }
+        
+        /**
+         * Returns the id of the current request
+         *
+         * @return string 
+         * @static 
+         */ 
+        public static function getCurrentRequestId()
+        {
+            //Method inherited from \DebugBar\DebugBar            
+                        /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+                        return $instance->getCurrentRequestId();
+        }
+        
+        /**
+         * Sets the storage backend to use to store the collected data
+         *
+         * @param \DebugBar\StorageInterface $storage
+         * @return \Barryvdh\Debugbar\LaravelDebugbar 
+         * @static 
+         */ 
+        public static function setStorage($storage = null)
+        {
+            //Method inherited from \DebugBar\DebugBar            
+                        /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+                        return $instance->setStorage($storage);
+        }
+        
+        /**
+         * 
+         *
+         * @return \DebugBar\StorageInterface 
+         * @static 
+         */ 
+        public static function getStorage()
+        {
+            //Method inherited from \DebugBar\DebugBar            
+                        /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+                        return $instance->getStorage();
+        }
+        
+        /**
+         * Checks if the data will be persisted
+         *
+         * @return boolean 
+         * @static 
+         */ 
+        public static function isDataPersisted()
+        {
+            //Method inherited from \DebugBar\DebugBar            
+                        /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+                        return $instance->isDataPersisted();
+        }
+        
+        /**
+         * Sets the HTTP driver
+         *
+         * @param \DebugBar\HttpDriverInterface $driver
+         * @return \Barryvdh\Debugbar\LaravelDebugbar 
+         * @static 
+         */ 
+        public static function setHttpDriver($driver)
+        {
+            //Method inherited from \DebugBar\DebugBar            
+                        /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+                        return $instance->setHttpDriver($driver);
+        }
+        
+        /**
+         * Returns the HTTP driver
+         * 
+         * If no http driver where defined, a PhpHttpDriver is automatically created
+         *
+         * @return \DebugBar\HttpDriverInterface 
+         * @static 
+         */ 
+        public static function getHttpDriver()
+        {
+            //Method inherited from \DebugBar\DebugBar            
+                        /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+                        return $instance->getHttpDriver();
+        }
+        
+        /**
+         * Returns collected data
+         * 
+         * Will collect the data if none have been collected yet
+         *
+         * @return array 
+         * @static 
+         */ 
+        public static function getData()
+        {
+            //Method inherited from \DebugBar\DebugBar            
+                        /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+                        return $instance->getData();
+        }
+        
+        /**
+         * Returns an array of HTTP headers containing the data
+         *
+         * @param string $headerName
+         * @param integer $maxHeaderLength
+         * @return array 
+         * @static 
+         */ 
+        public static function getDataAsHeaders($headerName = 'phpdebugbar', $maxHeaderLength = 4096, $maxTotalHeaderLength = 250000)
+        {
+            //Method inherited from \DebugBar\DebugBar            
+                        /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+                        return $instance->getDataAsHeaders($headerName, $maxHeaderLength, $maxTotalHeaderLength);
+        }
+        
+        /**
+         * Sends the data through the HTTP headers
+         *
+         * @param bool $useOpenHandler
+         * @param string $headerName
+         * @param integer $maxHeaderLength
+         * @return \Barryvdh\Debugbar\LaravelDebugbar 
+         * @static 
+         */ 
+        public static function sendDataInHeaders($useOpenHandler = null, $headerName = 'phpdebugbar', $maxHeaderLength = 4096)
+        {
+            //Method inherited from \DebugBar\DebugBar            
+                        /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+                        return $instance->sendDataInHeaders($useOpenHandler, $headerName, $maxHeaderLength);
+        }
+        
+        /**
+         * Stacks the data in the session for later rendering
+         *
+         * @static 
+         */ 
+        public static function stackData()
+        {
+            //Method inherited from \DebugBar\DebugBar            
+                        /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+                        return $instance->stackData();
+        }
+        
+        /**
+         * Checks if there is stacked data in the session
+         *
+         * @return boolean 
+         * @static 
+         */ 
+        public static function hasStackedData()
+        {
+            //Method inherited from \DebugBar\DebugBar            
+                        /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+                        return $instance->hasStackedData();
+        }
+        
+        /**
+         * Returns the data stacked in the session
+         *
+         * @param boolean $delete Whether to delete the data in the session
+         * @return array 
+         * @static 
+         */ 
+        public static function getStackedData($delete = true)
+        {
+            //Method inherited from \DebugBar\DebugBar            
+                        /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+                        return $instance->getStackedData($delete);
+        }
+        
+        /**
+         * Sets the key to use in the $_SESSION array
+         *
+         * @param string $ns
+         * @return \Barryvdh\Debugbar\LaravelDebugbar 
+         * @static 
+         */ 
+        public static function setStackDataSessionNamespace($ns)
+        {
+            //Method inherited from \DebugBar\DebugBar            
+                        /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+                        return $instance->setStackDataSessionNamespace($ns);
+        }
+        
+        /**
+         * Returns the key used in the $_SESSION array
+         *
+         * @return string 
+         * @static 
+         */ 
+        public static function getStackDataSessionNamespace()
+        {
+            //Method inherited from \DebugBar\DebugBar            
+                        /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+                        return $instance->getStackDataSessionNamespace();
+        }
+        
+        /**
+         * Sets whether to only use the session to store stacked data even
+         * if a storage is enabled
+         *
+         * @param boolean $enabled
+         * @return \Barryvdh\Debugbar\LaravelDebugbar 
+         * @static 
+         */ 
+        public static function setStackAlwaysUseSessionStorage($enabled = true)
+        {
+            //Method inherited from \DebugBar\DebugBar            
+                        /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+                        return $instance->setStackAlwaysUseSessionStorage($enabled);
+        }
+        
+        /**
+         * Checks if the session is always used to store stacked data
+         * even if a storage is enabled
+         *
+         * @return boolean 
+         * @static 
+         */ 
+        public static function isStackAlwaysUseSessionStorage()
+        {
+            //Method inherited from \DebugBar\DebugBar            
+                        /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+                        return $instance->isStackAlwaysUseSessionStorage();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function offsetSet($key, $value)
+        {
+            //Method inherited from \DebugBar\DebugBar            
+                        /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+                        return $instance->offsetSet($key, $value);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function offsetGet($key)
+        {
+            //Method inherited from \DebugBar\DebugBar            
+                        /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+                        return $instance->offsetGet($key);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function offsetExists($key)
+        {
+            //Method inherited from \DebugBar\DebugBar            
+                        /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+                        return $instance->offsetExists($key);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function offsetUnset($key)
+        {
+            //Method inherited from \DebugBar\DebugBar            
+                        /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+                        return $instance->offsetUnset($key);
+        }
+         
+    }
+ 
+}
+
 namespace Facade\Ignition\Facades { 
 
     /**
@@ -15232,6 +15936,395 @@ namespace Facade\Ignition\Facades {
         {
                         /** @var \Facade\FlareClient\Flare $instance */
                         return $instance->group($groupName, $properties);
+        }
+         
+    }
+ 
+}
+
+namespace Intervention\Image\Facades { 
+
+    /**
+     * 
+     *
+     */ 
+    class Image {
+        
+        /**
+         * Overrides configuration settings
+         *
+         * @param array $config
+         * @return self 
+         * @static 
+         */ 
+        public static function configure($config = [])
+        {
+                        /** @var \Intervention\Image\ImageManager $instance */
+                        return $instance->configure($config);
+        }
+        
+        /**
+         * Initiates an Image instance from different input types
+         *
+         * @param mixed $data
+         * @return \Intervention\Image\Image 
+         * @static 
+         */ 
+        public static function make($data)
+        {
+                        /** @var \Intervention\Image\ImageManager $instance */
+                        return $instance->make($data);
+        }
+        
+        /**
+         * Creates an empty image canvas
+         *
+         * @param int $width
+         * @param int $height
+         * @param mixed $background
+         * @return \Intervention\Image\Image 
+         * @static 
+         */ 
+        public static function canvas($width, $height, $background = null)
+        {
+                        /** @var \Intervention\Image\ImageManager $instance */
+                        return $instance->canvas($width, $height, $background);
+        }
+        
+        /**
+         * Create new cached image and run callback
+         * (requires additional package intervention/imagecache)
+         *
+         * @param \Closure $callback
+         * @param int $lifetime
+         * @param boolean $returnObj
+         * @return \Image 
+         * @static 
+         */ 
+        public static function cache($callback, $lifetime = null, $returnObj = false)
+        {
+                        /** @var \Intervention\Image\ImageManager $instance */
+                        return $instance->cache($callback, $lifetime, $returnObj);
+        }
+         
+    }
+ 
+}
+
+namespace Laravel\Horizon { 
+
+    /**
+     * 
+     *
+     */ 
+    class Horizon {
+         
+    }
+ 
+}
+
+namespace Mews\Captcha\Facades { 
+
+    /**
+     * 
+     *
+     * @see \Mews\Captcha
+     */ 
+    class Captcha {
+        
+        /**
+         * Create captcha image
+         *
+         * @param string $config
+         * @param bool $api
+         * @return array|mixed 
+         * @throws Exception
+         * @static 
+         */ 
+        public static function create($config = 'default', $api = false)
+        {
+                        /** @var \Mews\Captcha\Captcha $instance */
+                        return $instance->create($config, $api);
+        }
+        
+        /**
+         * Captcha check
+         *
+         * @param string $value
+         * @return bool 
+         * @static 
+         */ 
+        public static function check($value)
+        {
+                        /** @var \Mews\Captcha\Captcha $instance */
+                        return $instance->check($value);
+        }
+        
+        /**
+         * Captcha check
+         *
+         * @param string $value
+         * @param string $key
+         * @return bool 
+         * @static 
+         */ 
+        public static function check_api($value, $key)
+        {
+                        /** @var \Mews\Captcha\Captcha $instance */
+                        return $instance->check_api($value, $key);
+        }
+        
+        /**
+         * Generate captcha image source
+         *
+         * @param string $config
+         * @return string 
+         * @static 
+         */ 
+        public static function src($config = 'default')
+        {
+                        /** @var \Mews\Captcha\Captcha $instance */
+                        return $instance->src($config);
+        }
+        
+        /**
+         * Generate captcha image html tag
+         *
+         * @param string $config
+         * @param array $attrs $attrs -> HTML attributes supplied to the image tag where key is the attribute and the value is the attribute value
+         * @return string 
+         * @static 
+         */ 
+        public static function img($config = 'default', $attrs = [])
+        {
+                        /** @var \Mews\Captcha\Captcha $instance */
+                        return $instance->img($config, $attrs);
+        }
+         
+    }
+ 
+}
+
+namespace Mews\Purifier\Facades { 
+
+    /**
+     * 
+     *
+     * @see \Mews\Purifier
+     */ 
+    class Purifier {
+        
+        /**
+         * 
+         *
+         * @param $dirty
+         * @param null $config
+         * @return mixed 
+         * @static 
+         */ 
+        public static function clean($dirty, $config = null)
+        {
+                        /** @var \Mews\Purifier\Purifier $instance */
+                        return $instance->clean($dirty, $config);
+        }
+        
+        /**
+         * Get HTMLPurifier instance.
+         *
+         * @return \HTMLPurifier 
+         * @static 
+         */ 
+        public static function getInstance()
+        {
+                        /** @var \Mews\Purifier\Purifier $instance */
+                        return $instance->getInstance();
+        }
+         
+    }
+ 
+}
+
+namespace HieuLe\Active\Facades { 
+
+    /**
+     * Active facade class
+     *
+     * @author Hieu Le
+     */ 
+    class Active {
+        
+        /**
+         * Update the route and request instances
+         *
+         * @param \Route $route
+         * @param \Request $request
+         * @static 
+         */ 
+        public static function updateInstances($route, $request)
+        {
+                        /** @var \HieuLe\Active\Active $instance */
+                        return $instance->updateInstances($route, $request);
+        }
+        
+        /**
+         * Get the active class if the condition is not falsy
+         *
+         * @param $condition
+         * @param string $activeClass
+         * @param string $inactiveClass
+         * @return string 
+         * @static 
+         */ 
+        public static function getClassIf($condition, $activeClass = 'active', $inactiveClass = '')
+        {
+                        /** @var \HieuLe\Active\Active $instance */
+                        return $instance->getClassIf($condition, $activeClass, $inactiveClass);
+        }
+        
+        /**
+         * Check if the URI of the current request matches one of the specific URIs
+         *
+         * @param array|string $uris
+         * @return bool 
+         * @static 
+         */ 
+        public static function checkUri($uris)
+        {
+                        /** @var \HieuLe\Active\Active $instance */
+                        return $instance->checkUri($uris);
+        }
+        
+        /**
+         * Check if the current URI matches one of specific patterns (using `Str::is`)
+         *
+         * @param array|string $patterns
+         * @return bool 
+         * @static 
+         */ 
+        public static function checkUriPattern($patterns)
+        {
+                        /** @var \HieuLe\Active\Active $instance */
+                        return $instance->checkUriPattern($patterns);
+        }
+        
+        /**
+         * Check if one of the following condition is true:
+         * + the value of $value is `false` and the current querystring contain the key $key
+         * + the value of $value is not `false` and the current value of the $key key in the querystring equals to $value
+         * + the value of $value is not `false` and the current value of the $key key in the querystring is an array that
+         * contains the $value
+         *
+         * @param string $key
+         * @param mixed $value
+         * @return bool 
+         * @static 
+         */ 
+        public static function checkQuery($key, $value)
+        {
+                        /** @var \HieuLe\Active\Active $instance */
+                        return $instance->checkQuery($key, $value);
+        }
+        
+        /**
+         * Check if the name of the current route matches one of specific values
+         *
+         * @param array|string $routeNames
+         * @return bool 
+         * @static 
+         */ 
+        public static function checkRoute($routeNames)
+        {
+                        /** @var \HieuLe\Active\Active $instance */
+                        return $instance->checkRoute($routeNames);
+        }
+        
+        /**
+         * Check the current route name with one or some patterns
+         *
+         * @param array|string $patterns
+         * @return bool 
+         * @static 
+         */ 
+        public static function checkRoutePattern($patterns)
+        {
+                        /** @var \HieuLe\Active\Active $instance */
+                        return $instance->checkRoutePattern($patterns);
+        }
+        
+        /**
+         * Check if the parameter of the current route has the correct value
+         *
+         * @param $param
+         * @param $value
+         * @return bool 
+         * @static 
+         */ 
+        public static function checkRouteParam($param, $value)
+        {
+                        /** @var \HieuLe\Active\Active $instance */
+                        return $instance->checkRouteParam($param, $value);
+        }
+        
+        /**
+         * Return 'active' class if current route action match one of provided action names
+         *
+         * @param array|string $actions
+         * @return bool 
+         * @static 
+         */ 
+        public static function checkAction($actions)
+        {
+                        /** @var \HieuLe\Active\Active $instance */
+                        return $instance->checkAction($actions);
+        }
+        
+        /**
+         * Check if the current controller class matches one of specific values
+         *
+         * @param array|string $controllers
+         * @return bool 
+         * @static 
+         */ 
+        public static function checkController($controllers)
+        {
+                        /** @var \HieuLe\Active\Active $instance */
+                        return $instance->checkController($controllers);
+        }
+        
+        /**
+         * Get the current controller method
+         *
+         * @return string 
+         * @static 
+         */ 
+        public static function getMethod()
+        {
+                        /** @var \HieuLe\Active\Active $instance */
+                        return $instance->getMethod();
+        }
+        
+        /**
+         * Get the current action string
+         *
+         * @return string 
+         * @static 
+         */ 
+        public static function getAction()
+        {
+                        /** @var \HieuLe\Active\Active $instance */
+                        return $instance->getAction();
+        }
+        
+        /**
+         * Get the current controller class
+         *
+         * @return string 
+         * @static 
+         */ 
+        public static function getController()
+        {
+                        /** @var \HieuLe\Active\Active $instance */
+                        return $instance->getController();
         }
          
     }
@@ -18112,6 +19205,8 @@ namespace  {
 
     class Redirect extends \Illuminate\Support\Facades\Redirect {}
 
+    class Redis extends \Illuminate\Support\Facades\Redis {}
+
     class Request extends \Illuminate\Support\Facades\Request {}
 
     class Response extends \Illuminate\Support\Facades\Response {}
@@ -18132,7 +19227,19 @@ namespace  {
 
     class View extends \Illuminate\Support\Facades\View {}
 
+    class Debugbar extends \Barryvdh\Debugbar\Facade {}
+
     class Flare extends \Facade\Ignition\Facades\Flare {}
+
+    class Image extends \Intervention\Image\Facades\Image {}
+
+    class Horizon extends \Laravel\Horizon\Horizon {}
+
+    class Captcha extends \Mews\Captcha\Facades\Captcha {}
+
+    class Purifier extends \Mews\Purifier\Facades\Purifier {}
+
+    class Active extends \HieuLe\Active\Facades\Active {}
  
 }
 
