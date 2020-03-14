@@ -21,7 +21,7 @@ return [
         },
         // 不允许删除
         'delete' => function($model){
-            return true;
+            return false;
         },
         // 允许查看
         'view' => function($model){
