@@ -15,9 +15,9 @@ class VerificationCodesController extends Controller
         $phone = $request->phone;
 
         // 如果不是生产环境
-        if(!app()->environment('production')){
+        /*if(!app()->environment('production')){
             $code = '1234';
-        }else{
+        }else{*/
             // 生成四位随机数，左侧补0
             $code = str_pad(random_int(1, 9999), 4, 0, STR_PAD_LEFT);
 
@@ -32,9 +32,9 @@ class VerificationCodesController extends Controller
                 $message = $exception->getException('aliyun')->getMessage();
                 abort(500, $message ?: '短信发送异常');
             }
-        }
+        //}
 
-        $key = 'VerificationCode_' . Str::random(15);
+        $key = 'verificationCode_' . Str::random(15);
         $expiredAt = now()->addMinutes(5);
 
         // 缓存验证码 5 分钟过期
