@@ -54,8 +54,11 @@ Route::prefix('v1')->namespace('Api')
              // 分类列表
              Route::get('categories', 'CategoriesController@index')->name('categories.index');
 
+             // 某个用户发布的话题
+             Route::get('users/{user}/topics', 'TopicsController@userIndex')->name('users.topics.index');
+
              // 话题列表,详情
-             Route::resource('topics', 'TopicsController@index')->only(['index', 'show']);
+             Route::resource('topics', 'TopicsController')->only(['index', 'show']);
 
              // 登录后可以访问的接口
              Route::middleware('auth:api')->group(function(){
