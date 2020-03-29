@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use Spatie\QueryBuilder\QueryBuilder;
+
 /**
  * App\Models\Topic
  *
