@@ -25,7 +25,7 @@ class TopicsController extends Controller
         $topics = $query->with('user', 'category')->withOrder($request->order)->paginate();*/
 
         $topics = QueryBuilder::for(Topic::class)
-            ->allowedIncludes('user', 'category')
+            ->allowedIncludes('user', 'user.roles','category')
             ->allowedFilters([
                 'title',
                 AllowedFilter::exact('category_id'),
