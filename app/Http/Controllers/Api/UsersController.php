@@ -11,6 +11,13 @@ use Illuminate\Auth\AuthenticationException;
 
 class UsersController extends Controller
 {
+    public function activedIndex(User $user)
+    {
+        UserResource::wrap('data');
+
+        return UserResource::collection($user->getActiveUsers());
+    }
+
     public function store(UserRequest $request)
     {
         $verifyData = \Cache::get($request->verification_key);
