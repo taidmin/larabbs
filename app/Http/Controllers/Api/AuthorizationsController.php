@@ -122,13 +122,13 @@ class AuthorizationsController extends Controller
         }
     }
 
-    /*public function destroy()
+    public function destroy()
     {
         auth('api')->logout();
         return response(null, 204);
-    }*/
+    }
 
-    public function destroy()
+    /*public function destroy()
     {
         if (auth('api')->check()) {
             auth('api')->user()->token()->revoke();
@@ -136,7 +136,7 @@ class AuthorizationsController extends Controller
         } else {
             throw new AuthenticationException('The token is invalid.');
         }
-    }
+    }*/
 
     public function weappStore(WeappAuthorizationRequest $request)
     {
