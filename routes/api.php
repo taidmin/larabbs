@@ -47,6 +47,10 @@ Route::prefix('v1')->namespace('Api')
              Route::post('weapp/authorizations', 'AuthorizationsController@weappStore')
                  ->name('weapp.authorizations.store');
 
+             // 小程序注册
+             Route::post('weapp/users', 'UsersController@weappStore')
+                 ->name('weapp.users.store');
+
              // 刷新 token
              Route::put('authorizations/current', 'AuthorizationsController@update')->name('authorizations.update');
 
