@@ -87,7 +87,8 @@ Route::prefix('v1')->namespace('Api')
                  Route::get('user', 'UsersController@me')->name('user.show');
 
                  // 编辑用户登录信息
-                 Route::patch('user', 'UsersController@update')->name('user.update');
+                 Route::patch('user', 'UsersController@update')->name('user.patch');
+                 Route::put('user', 'UsersController@update')->name('user.update');
 
                  // 上传图片
                  Route::post('images', 'ImagesController@store')->name('images.store');
