@@ -67,6 +67,11 @@ class Topic extends Model
         return $this->hasMany(Reply::class);
     }
 
+    public function topReplies()
+    {
+        return $this->replies()->limit(5);
+    }
+
     public function scopeWithOrder($query, $order)
     {
         // 不同的排序，使用不同的数据读取逻辑
@@ -104,4 +109,6 @@ class Topic extends Model
         $this->reply_count = $this->replies->count();
         $this->save();
     }
+
+
 }
